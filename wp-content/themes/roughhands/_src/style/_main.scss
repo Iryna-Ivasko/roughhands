@@ -1,0 +1,224 @@
+/*** Overall ***/
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  @include ba-transition('fill, stroke');
+}
+
+a,
+[type="submit"],
+[type="button"],
+button {
+  @include ba-transition;
+}
+
+a:not(.button):not(.added_to_cart):hover {
+  opacity: 0.7;
+}
+
+p {
+  letter-spacing: 0.09rem;
+}
+
+.dark {
+  color: $white;
+  .button {
+    color: $black;
+    border: rem-calc(1) solid transparent;
+    &:after {
+      background-color: white;
+      width: 100%;
+    }
+
+    &:hover {
+      border: rem-calc(1) solid $white;
+      color: $white;
+      &:after {
+        width: 0;
+      }
+    }
+  }
+}
+
+.button, .woocommerce ul.products li.product .button,
+.added_to_cart {
+  position: relative;
+  background: transparent;
+  z-index: 10;
+  margin: rem-calc(0 12 0 0);
+  border-radius: rem-calc(50);
+  line-height: 1;
+  overflow: hidden;
+  font-weight: bold;
+  color: $black;
+  text-transform: uppercase;
+  font-family: AlternateGothic, 'Oswald';
+  letter-spacing: 0.08rem;
+  padding: rem-calc(2 20);
+  font-size: rem-calc(12);
+  border: rem-calc(1) solid $black;
+  &:after {
+    position: absolute;
+    content: '';
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    background-color: $black;
+    height: 100%;
+    transform-origin: left;
+    transition: width 0.25s ease;
+    z-index: -1;
+    border-radius: rem-calc(50);
+  }
+
+  &:hover {
+    color: $white;
+    background: transparent;
+    &:after {
+      width: 100%;
+    }
+  }
+}
+.small-text-center{
+  @include breakpoint(small down){
+    text-align: center;
+  }
+}
+
+
+.dimming-effect:before {
+  background-color: rgba(0, 0, 0, 0.35);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  content: '';
+  z-index: 0;
+}
+
+section {
+  margin: rem-calc(10 0);
+  position: relative;
+  padding: rem-calc(20 0);
+  @include breakpoint(medium up) {
+    padding: rem-calc(50 0);
+    margin: rem-calc(30 0);
+  }
+}
+
+.decorated-top {
+  &:before {
+    position: absolute;
+    top: rem-calc(-2);
+    left: 50%;
+    background: url("../img/ornament-bottom.png") no-repeat;
+    background-size: contain;
+    content: '';
+    height: rem-calc(25);
+    width: rem-calc(120);
+    transform: translate(-50%, -50%);
+  }
+}
+
+.decorated-bottom {
+  &:after {
+    position: absolute;
+    bottom: rem-calc(-2);
+    left: 50%;
+    background: url("../img/ornament-top.png") no-repeat;
+    background-size: contain;
+    content: '';
+    height: rem-calc(25);
+    width: rem-calc(120);
+    transform: translate(-50%, -50%);
+  }
+}
+
+form {
+  select,
+  textarea {
+    border-radius: 0;
+  }
+}
+
+/* Placeholder*/
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content
+  }
+  &:-moz-placeholder {
+    @content
+  }
+  &::-moz-placeholder {
+    @content
+  }
+  &:-ms-input-placeholder {
+    @content
+  }
+}
+
+.placeholder-shift-right {
+  @include placeholder {
+    text-indent: 0;
+    color: white;
+    transition: text-indent 300ms;
+  }
+
+  &:focus {
+    @include placeholder {
+      text-indent: 500px;
+    }
+  }
+}
+
+/* Placeholder*/
+
+/*** End overall ***/
+
+/*** Typography ***/
+h1, h2 {
+  font-family: Intro, sans-serif;
+  line-height: 1.3;
+}
+
+h1 {
+  letter-spacing: 0.2rem;
+}
+
+h2 {
+  letter-spacing: 0.06rem;
+}
+
+h3, h4 {
+  font-family: AlternateGothic, 'Oswald';
+  letter-spacing: 0.1rem;
+}
+
+h3 {
+  line-height: 1.7;
+}
+
+/*** End typography ***/
+
+/*** Hovers ***/
+.image-grow {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  img {
+    max-width: 100%;
+    transition: all 0.3s;
+  }
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+/*** End hovers ***/
+
+
+

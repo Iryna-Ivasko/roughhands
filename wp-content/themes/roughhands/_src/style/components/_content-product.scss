@@ -1,0 +1,41 @@
+.product {
+  list-style-type: none;
+  padding: rem-calc(29 0);
+  @include breakpoint(small down){
+    text-align: center;
+  }
+  .image-grow {
+    margin: rem-calc(22 0);
+  }
+  .price-and-add-to-card {
+    padding: rem-calc(16 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include breakpoint(small down){
+      justify-content: space-around;
+    }
+    .price {
+      letter-spacing: 0.16rem;
+      font-style: italic;
+    }
+  }
+  &__title {
+    letter-spacing: 0.12rem;
+    @include breakpoint(large up) {
+      min-height: rem-calc(46);
+      padding-right: rem-calc(30);
+    }
+  }
+  &__text {
+    font-size: rem-calc(8);
+    line-height: 2.5;
+    @include breakpoint(large up) {
+      padding-right: rem-calc(35);
+    }
+    p {
+      letter-spacing: 0.07rem;
+      line-height: inherit;
+    }
+  }
+}

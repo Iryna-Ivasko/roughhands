@@ -1,0 +1,33 @@
+.site-header {
+  .logo {
+    max-width: rem-calc(396);
+  }
+    position: relative;
+    .cart-contents {
+      position: fixed;
+      z-index: 1000;
+      top: rem-calc(40);
+      padding: rem-calc(5 60 5 10);
+      color: #fff;
+      background: $black;
+      @include breakpoint(medium up){
+        right: 0;
+      }
+      @include breakpoint(small down){
+        left: 0;
+      }
+      &:after {
+        width: 32px;
+        height: 32px;
+        content: '';
+        background-size: contain;
+
+        position: absolute;
+        transform: translate(50%, -50%);
+        top: 50%;
+        background-image: url('../img/basket.svg');
+      }
+    }
+
+
+}

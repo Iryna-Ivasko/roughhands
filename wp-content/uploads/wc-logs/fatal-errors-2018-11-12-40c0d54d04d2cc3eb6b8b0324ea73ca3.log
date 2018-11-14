@@ -1,0 +1,6 @@
+2018-11-12T06:41:43+00:00 CRITICAL Call to undefined function has_content() in C:\OSPanel\domains\roughhands\wp-content\themes\roughhands\page-templates\front.php on line 10
+
+2018-11-12T06:42:20+00:00 CRITICAL Call to undefined function get_content() in C:\OSPanel\domains\roughhands\wp-content\themes\roughhands\page-templates\front.php on line 10
+
+2018-11-12T06:43:02+00:00 CRITICAL syntax error, unexpected ':' in C:\OSPanel\domains\roughhands\wp-content\themes\roughhands\page-templates\front.php on line 10
+

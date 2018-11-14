@@ -1,0 +1,146 @@
+.woocommerce.woocommerce a.added_to_cart {
+  padding: rem-calc(2 20);
+}
+
+#add_payment_method .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+  border-radius: rem-calc(50);
+}
+
+.card-buttons {
+  display: flex;
+  align-items: center;
+  .add_to_cart_button.ajax_add_to_cart.added,
+  a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart.added,
+  a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart.loading,
+  .add_to_cart_button.ajax_add_to_cart.loading {
+    @include ba-transition();
+    width: rem-calc(25);
+    padding: 0;
+    height: rem-calc(25);
+    position: relative;
+    border: none;
+    color: $white;
+    margin-right: 0;
+    &:before {
+      transition: all 0.2s ease;
+      z-index: 10;
+      position: absolute;
+      content: '✓';
+      background: $white;
+      font-size: rem-calc(20);
+      color: $black;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &:focus {
+      background-color: $white;
+    }
+    &:hover {
+      &:before {
+        opacity: 0.6;
+      }
+    }
+    &:after {
+      display: none;
+    }
+
+  }
+}
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt {
+  background-color: $white;
+  color: black;
+  border: 1px solid $black;
+  &:hover {
+    background-color: $white;
+  }
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price{
+  color: $black;
+}
+
+.woocommerce-message{
+  border-top-color: $black;
+  &:before{
+    color: $black;
+  }
+}
+.woocommerce ul.products li.product a img {
+  margin-bottom: 0;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  border: 1px solid $black;
+  overflow: hidden;
+  background-color: $white;
+  color: $black;
+  border-radius: rem-calc(50);
+  &:hover {
+    color: $white;
+  }
+}
+
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce .quantity .qty {
+  max-height: rem-calc(33);
+}
+
+.woocommerce #respond input#submit.disabled,
+.woocommerce #respond input#submit:disabled,
+.woocommerce #respond input#submit:disabled[disabled],
+.woocommerce a.button.disabled,
+.woocommerce a.button:disabled,
+.woocommerce a.button:disabled[disabled],
+.woocommerce button.button.disabled,
+.woocommerce button.button:disabled,
+.woocommerce button.button:disabled[disabled],
+.woocommerce input.button.disabled,
+.woocommerce input.button:disabled,
+.woocommerce input.button:disabled[disabled] {
+  &:hover {
+    color: $white;
+  }
+}
+
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+  background: $black;
+}
+
+.woocommerce #content table.cart td.actions .input-text,
+.woocommerce table.cart td.actions .input-text,
+.woocommerce-page #content table.cart td.actions .input-text,
+.woocommerce-page table.cart td.actions .input-text {
+  width: rem-calc(130);
+}
+
+#add_payment_method table.cart td.actions .coupon .input-text,
+.woocommerce-cart table.cart td.actions .coupon .input-text,
+.woocommerce-checkout table.cart td.actions .coupon .input-text {
+  border: 1px solid black;
+  padding: rem-calc(6 15);
+}
+
+.add_to_cart_button.ajax_add_to_cart.loading,
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart.loading {
+  &:focus:before {
+    font-size: rem-calc(28);
+  }
+}
+
+.woocommerce ul.products li.product .price {
+  color: $black;
+}

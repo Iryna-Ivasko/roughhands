@@ -1,0 +1,38 @@
+
+.testimonials {
+  @include breakpoint(medium up) {
+    margin: rem-calc(51 0 34);
+  }
+  .testimonial {
+    &__image {
+      border-radius: 50%;
+      display: block;
+      margin: rem-calc(29 0);
+      @include breakpoint(small down) {
+        margin: rem-calc(15) auto;
+        max-width: 70vw;
+      }
+    }
+    &__content {
+      display: flex;
+      align-items: center;
+      .quote {
+        font-style: italic;
+      }
+      .section-title {
+        font-size: rem-calc(24);
+        letter-spacing: 0.08rem;
+      }
+      .quote {
+        padding: rem-calc(10 0);
+        margin-bottom: 0;
+
+        @include breakpoint(medium up) {
+          padding: rem-calc(24 0 25);
+          line-height: 1.7;
+          font-size: rem-calc(18);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.subscribe {
+  @include breakpoint(medium up) {
+    padding: rem-calc(60 0);
+  }
+  margin-bottom: 0;
+  .caption-under-form {
+    font-size: rem-calc(7);
+    letter-spacing: 0.115rem;
+    line-height: 2.2;
+  }
+  form {
+    text-align: center;
+  }
+  .wpcf7 {
+    max-width: rem-calc(486);
+    //margin: rem-calc(20) auto;
+    //@include breakpoint(medium up){
+    margin: rem-calc(44) auto 0;
+    //}
+    .submit-form {
+      p {
+        margin-bottom: 0;
+        height: 0;
+      }
+      p:first-of-type {
+        display: none;
+      }
+      p:nth-child(2) {
+        height: 0;
+        margin-bottom: 0;
+      }
+      .ajax-loader {
+        background-size: cover;
+        background-image: url('../img/ajax-loader.gif');
+        background-position: 50%, 50%;
+        width: 200px;
+        height: 200px;
+        transform: translate(0, -25%);
+      }
+    }
+    .wpcf7-form {
+      .submit-form {
+        position: relative;
+        .wpcf7-form-control {
+          border: rem-calc(1) solid $black;
+          box-shadow: none;
+          font-size: rem-calc(19);
+          letter-spacing: 0.13rem;
+          margin-bottom: rem-calc(11);
+          padding: rem-calc(24 41);
+          &:focus {
+            box-shadow: none;
+          }
+          @include placeholder {
+            font-size: rem-calc(18);
+            text-indent: 0;
+            color: $medium-gray;
+            transition: text-indent 300ms;
+          }
+
+          &:focus {
+            @include placeholder {
+              text-indent: 500px;
+            }
+          }
+          &.wpcf7-submit {
+            z-index: 100;
+            font-family: AlternateGothic, 'Oswald';;
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            font-size: 21px;
+            font-weight: bold;
+            line-height: 1.2;
+            letter-spacing: 0.24rem;
+            text-transform: uppercase;
+            background: transparent;
+            padding: rem-calc(14 20);
+            outline: none;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+}

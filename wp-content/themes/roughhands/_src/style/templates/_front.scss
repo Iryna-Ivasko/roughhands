@@ -1,0 +1,13 @@
+.home{
+  .site-header{
+    &.banner{
+      min-height: rem-calc(500);
+      @include breakpoint(medium up){
+        min-height: rem-calc(592);
+      }
+    }
+    .banner-content{
+      top: 58%;
+    }
+  }
+}

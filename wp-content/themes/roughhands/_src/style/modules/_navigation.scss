@@ -1,0 +1,229 @@
+/* Navigation breakpoints */
+
+.desktop-menu {
+  @include show-for(medium);
+}
+
+.desktop-menu {
+  li:nth-child(2) {
+    @include breakpoint(large up) {
+      margin-right: rem-calc(530);
+    }
+    margin-right: rem-calc(400);
+  }
+
+}
+
+#mobile-menu, .title-bar {
+  @include hide-for(large);
+}
+
+.title-bar {
+  position: relative;
+}
+
+// Mobile menu
+.mobile-menu {
+  display: none; // prevents repaint caused by JS hiding menu onload
+}
+
+.off-canvas {
+  > ul.menu {
+    height: 100vh;
+    padding: 1rem;
+
+    a {
+      color: $white;
+      font-family: AlternateGothic, 'Oswald';
+      letter-spacing: 0.13rem;
+      text-transform: uppercase;
+      font-size: rem-calc(20);
+      &:after {
+        background-color: $white;
+        display: block;
+        content: "";
+        height: rem-calc(1);
+        width: 0;
+        margin-top: rem-calc(7);
+        transition: width .3s ease-in-out;
+      }
+    }
+  }
+
+  .menu .active > a {
+    &:after,
+    &:after {
+      width: 100%;
+    }
+  }
+
+}
+
+// Tablet and desktop menu
+.title-bar-title {
+  @include breakpoint(medium down) {
+    display: block;
+    .logo {
+      margin: rem-calc(20) auto 0 auto;
+      display: block;
+      img {
+        max-width: rem-calc(330);
+      }
+    }
+  }
+  @include breakpoint(small down) {
+    padding: rem-calc(15 10);
+    .logo {
+      img {
+        max-width: rem-calc(230);
+      }
+    }
+  }
+}
+
+.dark {
+  .top-bar {
+    .menu {
+      a {
+        color: $white;
+        &:after {
+          background-color: $white;
+        }
+      }
+      .active > a {
+        &:after {
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
+.light {
+  .top-bar {
+    .menu {
+      a {
+        color: $black;
+        &:after {
+          background-color: $black;
+        }
+      }
+      .active > a {
+        &:after {
+          background-color: $black;
+        }
+      }
+    }
+  }
+  .menu-icon:after{
+    color: #000;
+    background: black;
+    box-shadow: 0 7px 0 #000, 0 14px 0 #000;
+  }
+}
+
+.top-bar {
+  margin: 0 auto;
+  position: relative;
+  padding: rem-calc(50 0);
+  @include breakpoint(medium up){
+    padding: rem-calc(45 0);
+  }
+  .logo {
+    margin: rem-calc(12 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .menu {
+    &.dropdown {
+      margin: 0;
+      width: 100%;
+      & > li:first-of-type {
+        & > a {
+          padding-left: 0;
+        }
+      }
+      & > li:last-of-type {
+        & > a {
+          padding-right: 0;
+        }
+      }
+      & > li {
+        & > a {
+          font-family: AlternateGothic, 'Oswald';
+          letter-spacing: 0.13rem;
+          text-transform: uppercase;
+          padding: rem-calc(7 20 0 20);
+          background: none;
+          font-size: rem-calc(20);
+          @include breakpoint(large up) {
+            padding: rem-calc(7 40 0 40);
+          }
+        }
+      }
+    }
+    a {
+
+      &:after {
+        display: block;
+        content: "";
+        height: rem-calc(1);
+        width: 0;
+        margin-left: -25%;
+        margin-top: rem-calc(6);
+        transition: width .3s ease-in-out;
+      }
+      &:hover:not(.button):after,
+      &:focus:not(.button):after {
+        width: 150%;
+
+      }
+    }
+  }
+
+  .menu .active > a {
+    &:after {
+      display: block;
+      content: "";
+      height: rem-calc(1);
+      width: 150%;
+      margin-top: rem-calc(6);
+      transition: width .3s ease-in-out;
+    }
+  }
+
+  .dropdown.menu .submenu {
+    border: 0;
+  }
+  .dropdown.menu .has-submenu.is-down-arrow a {
+    padding-right: 1rem;
+  }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after {
+    border: 0;
+  }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after {
+    display: none;
+  }
+}
+
+.site-navigation {
+  @include breakpoint(small only) {
+    padding: 0; // prevents container visibility on small screens
+  }
+}
+
+// WP post navigation
+.post-navigation {
+  @include clearfix;
+}
+
+.nav-previous {
+  float: left;
+}
+
+.nav-next {
+  float: right;
+}

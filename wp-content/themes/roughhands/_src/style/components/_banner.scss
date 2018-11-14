@@ -1,0 +1,55 @@
+.banner{
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin: 0 0 rem-calc(27);
+	position: relative;
+	min-height: rem-calc(320);
+	@include breakpoint(medium up) {
+		min-height: rem-calc(404);
+	}
+	.banner-content{
+		width: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		.button{
+			font-size: rem-calc(14);
+			margin: rem-calc(20) auto;
+			padding: rem-calc(15 30);
+			font-weight: bold;
+			letter-spacing: 0.13rem;
+			@include breakpoint(medium up){
+				padding: rem-calc(15 65);
+				font-size: rem-calc(20);
+			}
+
+		}
+		.banner-title{
+			line-height: 1.4;
+			letter-spacing: 0.2rem;
+			margin: 0 auto;
+			@include breakpoint(medium up){
+				max-width: 90%;
+			}
+		}
+		.banner-text{
+
+			margin: rem-calc(18) auto;
+			font-weight: lighter;
+			letter-spacing: 0.13rem;
+
+			@include breakpoint(medium up){
+				//padding: 0 rem-calc(218);
+				max-width: 50%;
+				font-size: rem-calc(23);
+			}
+			p{
+				line-height: 1.7;
+				letter-spacing: 0.13rem;
+			}
+		}
+	}
+}

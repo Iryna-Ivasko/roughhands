@@ -1,0 +1,32 @@
+.slider {
+  margin: rem-calc(10 0);
+  padding: rem-calc(20 0);
+  @include breakpoint(medium up) {
+    margin: rem-calc(48 0 40);
+    padding: rem-calc(65 0);
+  }
+  .expanded {
+    padding: 0;
+  }
+  .proud-slider {
+    padding-top: rem-calc(30);
+    @include breakpoint(large up){
+      padding-top: rem-calc(63);
+    }
+    &__slide {
+        outline:none;
+      img {
+        margin: 0 auto;
+        height: auto;
+        width: 31vw;
+        max-width: rem-calc(392);
+      }
+      &.slick-current{
+        border-top:rem-calc(2) solid $light-gray;
+      }
+    }
+  }
+}
+#buffer-extension-hover-button{
+  display: none;
+}

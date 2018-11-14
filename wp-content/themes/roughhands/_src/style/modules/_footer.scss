@@ -1,0 +1,49 @@
+.site-footer {
+  margin-top: rem-calc(27);
+  padding: rem-calc(40 0);
+  @include breakpoint(medium up) {
+    padding: rem-calc(57 0);
+  }
+  background-color: $black;
+  color: $white;
+  a {
+    color: $white;
+  }
+  .footer-logo{
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    max-width: rem-calc(80);
+  }
+  .menu {
+    flex-direction: column;
+    .menu-item {
+      a {
+        font-weight: 100;
+        font-size: rem-calc(15);
+        padding: rem-calc(2 0 22);
+      }
+      &.current-menu-item{
+        a{
+          font-weight: bold;
+        }
+      }
+
+    }
+  }
+  .widget {
+    @include breakpoint(small down){
+      padding: rem-calc(15 0);
+    }
+    p, a {
+      margin-bottom: 0;
+      font-weight: 100;
+    }
+    h6 {
+      font-weight: 100;
+      font-style: italic;
+      color: $medium-gray;
+      margin-bottom: rem-calc(11);
+    }
+  }
+}
